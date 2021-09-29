@@ -17,10 +17,20 @@ export default {};
       <!-- Provides the application the proper gutter -->
       <v-container fluid class="mt-10">
         <!-- If using vue-router -->
-        <router-view></router-view>
+        <router-view :ccp-service="ccpService"></router-view>
       </v-container>
     </v-main>
 
     <v-footer app> CommonControlPlane v1.2.3 </v-footer>
   </v-app>
 </template>
+<script>
+import CCPService from "./CCPService";
+export default {
+  data() {
+    return {
+      ccpService: new CCPService(),
+    };
+  },
+};
+</script>
