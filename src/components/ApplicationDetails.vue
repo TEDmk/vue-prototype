@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center">
-    <v-col cols="12" sm="12" md="12" xl="6">
+    <v-col cols="12" sm="12" md="12" lg="9" xl="6">
       <BreadCrumb></BreadCrumb>
       <v-card elevation="2" class="pa-2 mb-6" shaped>
         <v-card-text>
@@ -24,15 +24,32 @@
       <v-row>
         <v-col sm="6" md="6" xl="6">
           <v-card elevation="2" class="pa-2 mb-6" shaped>
-            <v-card-text>
-              <p>
-                <span class="text-h5 text--primary pa-2">Environments</span>
-              </p>
-            </v-card-text>
+            <v-list>
+              <v-list-item>
+                <v-list-item-content>
+                  <span class="text-h5 text--primary">Environments</span>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn
+                    :loading="loading3"
+                    :disabled="loading3"
+                    color="blue-grey"
+                    class="ma-2 white--text"
+                    @click="loader = 'loading3'"
+                  >
+                    New
+                    <v-icon right dark> mdi-plus </v-icon>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list>
             <v-list>
               <v-list-item key="DEV">
                 <v-list-item-content>
-                  <v-list-item-title>DEV</v-list-item-title>
+                  <v-list-item-title>
+                    <span class="mr-3">DEV</span>
+                    <v-badge color="green" content="non-prd"></v-badge
+                  ></v-list-item-title>
                   <v-list-item-subtitle
                     ><v-icon color="green">mdi-checkbox-blank-circle</v-icon>
                     <span> ACTIVE</span></v-list-item-subtitle
@@ -51,7 +68,10 @@
               </v-list-item>
               <v-list-item key="UAT">
                 <v-list-item-content>
-                  <v-list-item-title>UAT</v-list-item-title>
+                  <v-list-item-title
+                    ><span class="mr-3">UAT</span>
+                    <v-badge color="green" content="non-prd"></v-badge
+                  ></v-list-item-title>
                   <v-list-item-subtitle
                     ><v-icon color="green">mdi-checkbox-blank-circle</v-icon>
                     <span> ACTIVE</span></v-list-item-subtitle
@@ -70,7 +90,10 @@
               </v-list-item>
               <v-list-item key="PRD">
                 <v-list-item-content>
-                  <v-list-item-title>PRD</v-list-item-title>
+                  <v-list-item-title
+                    ><span class="mr-3">PRD</span>
+                    <v-badge color="red accent-2" content="prd"></v-badge
+                  ></v-list-item-title>
                   <v-list-item-subtitle
                     ><v-icon color="green">mdi-checkbox-blank-circle</v-icon>
                     <span> ACTIVE</span></v-list-item-subtitle
@@ -92,11 +115,25 @@
         </v-col>
         <v-col sm="6" md="6" xl="6">
           <v-card elevation="2" class="pa-2 mb-6" shaped>
-            <v-card-text>
-              <p>
-                <span class="text-h5 text--primary pa-2">Artifacts</span>
-              </p>
-            </v-card-text>
+            <v-list>
+              <v-list-item>
+                <v-list-item-content>
+                  <span class="text-h5 text--primary">Artifacts</span>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn
+                    :loading="loading3"
+                    :disabled="loading3"
+                    color="blue-grey"
+                    class="ma-2 white--text"
+                    @click="loader = 'loading3'"
+                  >
+                    New
+                    <v-icon right dark> mdi-plus </v-icon>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list>
             <v-list>
               <v-list-item key="v1.4.2">
                 <v-list-item-content>
