@@ -44,7 +44,7 @@
 </template>
 <script>
 export default {
-  name: "ArtifactsCards",
+  name: "ArtifactsCard",
   props: {
     artifacts: {
       type: Array,
