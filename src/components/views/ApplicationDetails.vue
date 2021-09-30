@@ -41,7 +41,7 @@ export default {
   },
   props: ["ccpService"],
   data: function () {
-    return { application: null, environments: [], artifacts: [] };
+    return { application: null, environments: null, artifacts: null };
   },
 };
 </script>

@@ -101,6 +101,63 @@ export default class CCPService {
     };
     return this.waitPromise(apps[app_id][env_id])
   }
+  getDeployments(app_id, env_id) {
+    let apps = {
+      "edd1c473-94d3-470f-a5c7-09fa2e8ae5c4": {
+        "add1c473-94d3-470f-a5c7-09fa2e8ae5c4": [
+          {
+            name: "v1.5.3",
+            status: "ACTIVE"
+          },
+          {
+            name: "v1.5.2",
+            status: "ACTIVE"
+          },
+        ],
+        "bdd1c473-94d3-470f-a5c7-09fa2e8ae5c4": [
+          {
+            name: "v1.5.2",
+            status: "ACTIVE"
+          },
+          {
+            name: "v1.5.1",
+            status: "ACTIVE"
+          },
+        ],
+      },
+      "f2a342ec-94d3-470f-a5c7-09fa2e8ae5c4": {
+        "cdd1c473-94d3-470f-a5c7-09fa2e8ae5c4": [
+          {
+            name: "v1.5.3",
+            status: "ACTIVE"
+          },
+          {
+            name: "v1.5.2",
+            status: "ACTIVE"
+          },
+        ], "ddd1c473-94d3-470f-a5c7-09fa2e8ae5c4": [
+          {
+            name: "v1.5.3",
+            status: "ACTIVE"
+          },
+          {
+            name: "v1.5.2",
+            status: "ACTIVE"
+          },
+        ], "edd1c473-94d3-470f-a5c7-09fa2e8ae5c4": [
+          {
+            name: "v1.5.3",
+            status: "ACTIVE"
+          },
+          {
+            name: "v1.5.2",
+            status: "ACTIVE"
+          },
+        ],
+      },
+    };
+    return this.waitPromise(apps[app_id][env_id])
+  }
   getArtifacts(id) {
     let apps = {
       "edd1c473-94d3-470f-a5c7-09fa2e8ae5c4": [{

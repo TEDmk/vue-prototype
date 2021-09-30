@@ -13,11 +13,8 @@
         </v-list-item-action>
       </v-list-item>
     </v-list>
-    <v-skeleton-loader
-      type="article"
-      v-if="!artifacts.length"
-    ></v-skeleton-loader>
-    <v-list v-if="artifacts.length">
+    <v-skeleton-loader type="article" v-if="!artifacts"></v-skeleton-loader>
+    <v-list v-if="artifacts">
       <v-list-item :key="artifact.name" v-for="artifact in artifacts">
         <v-list-item-content>
           <v-list-item-title>

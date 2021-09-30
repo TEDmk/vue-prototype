@@ -3,31 +3,30 @@
     <v-list>
       <v-list-item>
         <v-list-item-content>
-          <span class="text-h5 text--primary">Environments</span>
+          <span class="text-h5 text--primary">Deployments</span>
         </v-list-item-content>
         <v-list-item-action>
           <v-btn color="blue-grey" class="ma-2 white--text">
-            New
-            <v-icon right dark> mdi-plus </v-icon>
+            Deploy
+            <v-icon right dark> mdi-cloud-upload </v-icon>
           </v-btn>
         </v-list-item-action>
       </v-list-item>
     </v-list>
-    <v-skeleton-loader type="article" v-if="!environments"></v-skeleton-loader>
-    <v-list v-if="environments">
-      <v-list-item :key="environment.name" v-for="environment in environments">
+    <v-skeleton-loader type="article" v-if="!deployments"></v-skeleton-loader>
+    <v-list v-if="deployments">
+      <v-list-item :key="deployment.name" v-for="deployment in deployments">
         <v-list-item-content>
           <v-list-item-title>
-            <span class="mr-3">{{ environment.name }}</span>
-            <v-badge color="green" :content="environment.type"></v-badge
-          ></v-list-item-title>
+            <span class="mr-3">{{ deployment.name }}</span></v-list-item-title
+          >
           <v-list-item-subtitle
             ><v-icon color="green">mdi-checkbox-blank-circle</v-icon>
-            <span> {{ environment.status }}</span></v-list-item-subtitle
+            <span> {{ deployment.status }}</span></v-list-item-subtitle
           >
         </v-list-item-content>
         <v-list-item-action>
-          <v-btn icon :to="'environments/' + environment.id" append>
+          <v-btn icon>
             <v-icon color="grey lighten-1">mdi-information</v-icon>
           </v-btn>
         </v-list-item-action>
@@ -42,9 +41,9 @@
 </template>
 <script>
 export default {
-  name: "EnvironmentsCard",
+  name: "DeploymentsCard",
   props: {
-    environments: {
+    deployments: {
       type: Array,
     },
   },

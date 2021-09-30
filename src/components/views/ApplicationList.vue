@@ -2,14 +2,15 @@
   <v-row justify="center">
     <v-col cols="12" sm="12" md="12" lg="9" xl="6">
       <BreadCrumb></BreadCrumb>
-      <ApplicationCard
-        v-if="!Object.keys(applications).length"
-      ></ApplicationCard>
-      <ApplicationCard
-        :application="application"
-        v-for="application in applications"
-        :key="application.id"
-      ></ApplicationCard>
+
+      <ApplicationCard v-if="!applications"></ApplicationCard>
+      <div v-if="applications">
+        <ApplicationCard
+          :application="application"
+          v-for="application in applications"
+          :key="application.id"
+        ></ApplicationCard>
+      </div>
     </v-col>
   </v-row>
 </template>
@@ -37,7 +38,7 @@ export default {
   },
   props: ["ccpService"],
   data: function () {
-    return { applications: [] };
+    return { applications: null };
   },
 };
 </script>
