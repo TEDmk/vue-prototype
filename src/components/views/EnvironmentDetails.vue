@@ -2,7 +2,7 @@
   <v-row justify="center">
     <v-col cols="12" sm="12" md="12" lg="9" xl="6">
       <BreadCrumb></BreadCrumb>
-      <EnvironmentCards :environment="environment"></EnvironmentCards>
+      <EnvironmentCard :environment="environment"></EnvironmentCard>
       <v-card elevation="2" class="pa-2 mb-6" shaped>
         <v-list>
           <v-list-item>
@@ -10,13 +10,7 @@
               <span class="text-h5 text--primary">Deployments</span>
             </v-list-item-content>
             <v-list-item-action>
-              <v-btn
-                :loading="loading3"
-                :disabled="loading3"
-                color="blue-grey"
-                class="ma-2 white--text"
-                @click="loader = 'loading3'"
-              >
+              <v-btn color="blue-grey" class="ma-2 white--text">
                 Deploy
                 <v-icon right dark> mdi-cloud-upload </v-icon>
               </v-btn>
@@ -45,13 +39,13 @@
 </template>
 
 <script>
-import BreadCrumb from "./BreadCrumb";
-import EnvironmentCards from "./EnvironmentCards.vue";
+import BreadCrumb from "../utils/BreadCrumb";
+import EnvironmentCard from "../cards/EnvironmentCard.vue";
 export default {
   name: "ApplicationDetails",
   components: {
     BreadCrumb,
-    EnvironmentCards,
+    EnvironmentCard,
   },
   mounted() {
     this.ccpService

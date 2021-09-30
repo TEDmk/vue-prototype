@@ -4,9 +4,9 @@ import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import VueRouter from 'vue-router'
 
-import ApplicationList from './components/ApplicationList'
-import EnvironmentDetails from './components/EnvironmentDetails'
-import ApplicationDetails from './components/ApplicationDetails'
+import ApplicationList from './components/views/ApplicationList'
+import EnvironmentDetails from './components/views/EnvironmentDetails'
+import ApplicationDetails from './components/views/ApplicationDetails'
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)

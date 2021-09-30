@@ -2,13 +2,13 @@
   <v-row justify="center">
     <v-col cols="12" sm="12" md="12" lg="9" xl="6">
       <BreadCrumb></BreadCrumb>
-      <ApplicationCards :application="application"></ApplicationCards>
+      <ApplicationCard :application="application"></ApplicationCard>
       <v-row>
         <v-col sm="6" md="6" xl="6">
-          <EnvironmentsCards :environments="environments"></EnvironmentsCards>
+          <EnvironmentsCard :environments="environments"></EnvironmentsCard>
         </v-col>
         <v-col sm="6" md="6" xl="6">
-          <ArtifactsCards :artifacts="artifacts"></ArtifactsCards>
+          <ArtifactsCard :artifacts="artifacts"></ArtifactsCard>
         </v-col>
       </v-row>
     </v-col>
@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import BreadCrumb from "./BreadCrumb";
-import ApplicationCards from "./ApplicationCards.vue";
-import EnvironmentsCards from "./EnvironmentsCards.vue";
-import ArtifactsCards from "./ArtifactsCards.vue";
+import BreadCrumb from "../utils/BreadCrumb";
+import ApplicationCard from "../cards/ApplicationCard.vue";
+import EnvironmentsCard from "../cards/EnvironmentsCard.vue";
+import ArtifactsCard from "../cards/ArtifactsCard.vue";
 export default {
   name: "ApplicationDetails",
   mounted() {
@@ -35,9 +35,9 @@ export default {
   },
   components: {
     BreadCrumb,
-    ApplicationCards,
-    EnvironmentsCards,
-    ArtifactsCards,
+    ApplicationCard,
+    EnvironmentsCard,
+    ArtifactsCard,
   },
   props: ["ccpService"],
   data: function () {

@@ -18,7 +18,7 @@
 </template>
 <script>
 export default {
-  name: "EnvironmentCards",
+  name: "EnvironmentCard",
   props: {
     environment: {
       type: Object,

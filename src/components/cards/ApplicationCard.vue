@@ -25,7 +25,7 @@
 </template>
 <script>
 export default {
-  name: "ApplicationCards",
+  name: "ApplicationCard",
   props: {
     application: {
       type: Object,

@@ -45,7 +45,7 @@
 </template>
 <script>
 export default {
-  name: "EnvironmentsCards",
+  name: "EnvironmentsCard",
   props: {
     environments: {
       type: Array,

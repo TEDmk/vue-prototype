@@ -2,25 +2,24 @@
   <v-row justify="center">
     <v-col cols="12" sm="12" md="12" lg="9" xl="6">
       <BreadCrumb></BreadCrumb>
-      <ApplicationCards
+      <ApplicationCard
         v-if="!Object.keys(applications).length"
-      ></ApplicationCards>
-      <ApplicationCards
+      ></ApplicationCard>
+      <ApplicationCard
         :application="application"
         v-for="application in applications"
         :key="application.id"
-      ></ApplicationCards>
+      ></ApplicationCard>
     </v-col>
   </v-row>
 </template>
 <script>
-//import axios from "axios";
-import BreadCrumb from "./BreadCrumb";
-import ApplicationCards from "./ApplicationCards.vue";
+import BreadCrumb from "../utils/BreadCrumb";
+import ApplicationCard from "../cards/ApplicationCard.vue";
 export default {
   components: {
     BreadCrumb,
-    ApplicationCards,
+    ApplicationCard,
   },
   mounted() {
     this.ccpService

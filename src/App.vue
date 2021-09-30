@@ -25,7 +25,7 @@ export default {};
   </v-app>
 </template>
 <script>
-import CCPService from "./CCPService";
+import CCPService from "./services/CCPService";
 export default {
   data() {
     return {
