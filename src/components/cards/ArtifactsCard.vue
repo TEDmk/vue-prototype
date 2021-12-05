@@ -31,17 +31,30 @@
           </v-btn>
         </v-list-item-action>
         <v-list-item-action>
-          <v-btn icon>
-            <v-icon color="grey lighten-1">mdi-delete</v-icon>
-          </v-btn>
+          <deleteItem
+            resourceType="artifact"
+            :resourceName="artifact.name"
+            :delete-func="
+              () => {
+                return deleteArtFunc(artifact.name);
+              }
+            "
+          />
         </v-list-item-action>
       </v-list-item>
     </v-list>
   </v-card>
 </template>
 <script>
+import deleteItem from "../items/deleteItem.vue";
 export default {
+  components: { deleteItem },
   name: "ArtifactsCard",
+  methods: {
+    deleteArtFunc: function (name) {
+      console.log("Deleting artifact: " + name);
+    },
+  },
   props: {
     artifacts: {
       type: Array,

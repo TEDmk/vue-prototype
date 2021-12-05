@@ -32,17 +32,30 @@
           </v-btn>
         </v-list-item-action>
         <v-list-item-action>
-          <v-btn icon>
-            <v-icon color="grey lighten-1">mdi-delete</v-icon>
-          </v-btn>
+          <deleteItem
+            resourceType="environment"
+            :resourceName="environment.name"
+            :delete-func="
+              () => {
+                return deleteEnvFunc(environment.name);
+              }
+            "
+          />
         </v-list-item-action>
       </v-list-item>
     </v-list>
   </v-card>
 </template>
 <script>
+import deleteItem from "../items/deleteItem.vue";
 export default {
+  components: { deleteItem },
   name: "EnvironmentsCard",
+  methods: {
+    deleteEnvFunc: function (name) {
+      console.log("Deleting env: " + name);
+    },
+  },
   props: {
     environments: {
       type: Array,

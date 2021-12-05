@@ -1,12 +1,9 @@
-<script>
-export default {};
-</script>
 <template>
   <v-app>
     <v-app-bar color="light-blue" app dark>
       <v-toolbar-title>CommonControlPlane</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn>TRI_000000_DEV</v-btn>
+      <SelectAccountItem />
       <v-btn icon color="grey darken-4">
         <v-icon>mdi-refresh</v-icon>
       </v-btn>
@@ -26,7 +23,11 @@ export default {};
 </template>
 <script>
 import CCPService from "./services/CCPService";
+import SelectAccountItem from "./components/items/SelectAccountItem.vue";
 export default {
+  components: {
+    SelectAccountItem,
+  },
   data() {
     return {
       ccpService: new CCPService(),

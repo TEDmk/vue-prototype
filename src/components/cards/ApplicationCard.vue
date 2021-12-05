@@ -17,6 +17,7 @@
         color="deep-purple accent-3"
         :to="'applications/' + application.id"
         append
+        v-show="summarized"
         >Manage</v-btn
       >
       <v-btn text color="red accent-4">Delete</v-btn>
@@ -30,6 +31,11 @@ export default {
     application: {
       type: Object,
       required: false,
+    },
+    summarized: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
 };

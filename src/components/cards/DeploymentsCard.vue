@@ -31,17 +31,30 @@
           </v-btn>
         </v-list-item-action>
         <v-list-item-action>
-          <v-btn icon>
-            <v-icon color="grey lighten-1">mdi-delete</v-icon>
-          </v-btn>
+          <deleteItem
+            resourceType="deployment"
+            :resourceName="deployment.name"
+            :delete-func="
+              () => {
+                return deleteDepFunc(environment.name);
+              }
+            "
+          />
         </v-list-item-action>
       </v-list-item>
     </v-list>
   </v-card>
 </template>
 <script>
+import deleteItem from "../items/deleteItem.vue";
 export default {
+  components: { deleteItem },
   name: "DeploymentsCard",
+  methods: {
+    deleteDepFunc: function (name) {
+      console.log("Deleting deployment: " + name);
+    },
+  },
   props: {
     deployments: {
       type: Array,

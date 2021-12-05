@@ -2,7 +2,10 @@
   <v-row justify="center">
     <v-col cols="12" sm="12" md="12" lg="9" xl="6">
       <BreadCrumb></BreadCrumb>
-      <ApplicationCard :application="application"></ApplicationCard>
+      <ApplicationCard
+        :application="application"
+        :summarized="false"
+      ></ApplicationCard>
       <v-row>
         <v-col sm="6" md="6" xl="6">
           <EnvironmentsCard :environments="environments"></EnvironmentsCard>
